@@ -4,13 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start-dev": "webpack-dev-server --config webpack.dev.js",
-    "heroku-postbuild": "webpack -p --config ./webpack.prod.config.js --progress",
-    "build": "webpack --config webpack.prod.js",
-    "build-image": "node sharp.js",
-    "test": "karma start",
-    "lint": "eslint ./src",
-    "e2e": "codeceptjs run --steps"
+    "heroku-postbuild": "webpack -p --config ./webpack.prod.config.js --progress"
   },
   "keywords": [],
   "author": "Aan Sumanto <aansoemanto0210@gmail.com>",
