@@ -20,7 +20,7 @@ const CacheHelper = {
             this._fetchRequest(request);
             return response;
         }
-
+ 
         return this._fetchRequest(request);
     },
 
