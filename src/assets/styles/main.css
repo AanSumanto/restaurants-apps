@@ -1,8 +1,3 @@
-@font-face {
-    font-family: "LovelyHome";
-    src: url("../font/LovelyHome.ttf");
-}
-
 * {
     padding: 0;
     margin: 0;
@@ -21,10 +16,6 @@ body{
     AppBar
   */
 
-/* header .app-bar {
-    grid-template-columns: auto auto auto;
-} */
-
 .app-bar {
     padding: 8px 16px;
     background-color: #F7FD04;
@@ -37,12 +28,12 @@ body{
     box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2);
 }
   
-.app-bar .app-bar_menu {
+.app-bar_menu {
     display: flex;
     align-items: center;
 }
   
-.app-bar .app-bar_menu button {
+.app-bar_menu button {
     background-color: transparent;
     border: none;
     font-size: 18px;
@@ -50,24 +41,19 @@ body{
     cursor: pointer;
 }
   
-.app-bar .app-bar_brand {
+.app-bar_brand {
     display: flex;
     align-items: center;
 }
 
-/* .app-bar .app-bar_search-bar {
-    display: inline-flex;
-} */
-
-
-.app-bar .app-bar_brand h1 {
+.app-bar_brand h1 {
     color: #db0000;
-    font-family: LovelyHome;
+    font-family: 'Trebuchet MS';
     font-size: 15px;
     user-select: none;
 }
   
-.app-bar .app-bar_navbar {
+.app-bar_navbar {
     position: absolute;
     top: 50px;
     left: -180px;
@@ -78,11 +64,11 @@ body{
     overflow: hidden;
 }
   
-.app-bar .app-bar_navbar.open {
+.app-bar_navbar.open {
     left: 0;
 }
   
-.app-bar .app-bar_navbar ul li a {
+.app-bar_navbar ul li a {
     display: inline-block;
     text-decoration: none;
     /* align-content: center; */
@@ -133,7 +119,6 @@ picture img{
   grid-template-columns: auto;
   padding: 15px;
   align-items: center;
-  min-height: 380px;
   width: 100%;
   text-align: center;
 }
@@ -143,7 +128,6 @@ picture img{
     grid-template-columns: auto;
     padding: 15px;
     align-items: center;
-    min-height: 380px;
     width: 100%;
     text-align: center;
     background-position: center;
@@ -204,7 +188,7 @@ picture img{
     position: relative;
   }
   
-  .restaurant-item .restaurant-item_header .restaurant-item_header_poster {
+  .restaurant-item .restaurant-item_header picture img .restaurant-item_header_poster {
     width: 100%;
   }
   

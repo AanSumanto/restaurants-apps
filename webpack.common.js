@@ -24,17 +24,12 @@ module.exports = {
           },
           {
             loader: 'css-loader',
+            options: {
+              url: false
+            }
           },
         ],
       },
-      {
-            test: /\.(woff|woff2|eot|ttf|otf)$/,
-            use: [
-                {
-               loader: 'file-loader',
-                },
-            ],
-          },
           {
             test: /\.(gif|png|jpe?g|svg|jpg)$/i,
             use: [
@@ -111,6 +106,9 @@ module.exports = {
       ],
       overrideExtension: true,
     }),
-    new BundleAnalyzerPlugin(),
+    new BundleAnalyzerPlugin({
+      analyzerMode: "static", 
+      openAnalyzer: false
+})
   ],
 };

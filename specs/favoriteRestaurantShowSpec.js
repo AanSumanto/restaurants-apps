@@ -27,7 +27,7 @@ describe('Showing all favorite restaurants', () => {
 
         it('should the information that the no restaurants have been liked', (done) => {
             document.getElementById('restaurants').addEventListener('restaurants:updated', () => {
-                expect(document.querySelectorAll('.restaurant-item_not_found').length)
+                expect(document.querySelectorAll('.restaurant-item__not__found').length)
                     .toEqual(1);
 
                 done();

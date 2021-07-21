@@ -10,8 +10,8 @@ const createRestaurantDetailTemplate = (restaurant) => `
         <h4>Rating: ${restaurant.rating} </h4>
         <picture> 
             <img 
-                class="restaurant_poster" 
-                src="${CONFIG.BASE_IMAGE_URL + restaurant.pictureId}" 
+                class="lazyload restaurant_poster" 
+                data-src="${CONFIG.BASE_IMAGE_URL + restaurant.pictureId}" 
                 alt="${restaurant.name}">
             </img>
         </picture>        
@@ -42,48 +42,25 @@ const createRestaurantDetailTemplate = (restaurant) => `
     </div>
 `;
 
-const createRestaurantItemTemplate = (restaurant) => `
+const createRestaurantItemTemplate = (restaurants) => `
   <div class="restaurant-item">
     <div class="restaurant-item_header">
         <picture> 
             <img 
-                class="restaurant-item_header_poster" 
-                src="${restaurant.pictureId ? CONFIG.BASE_IMAGE_URL + restaurant.pictureId : 'https://picsum.photos/id/666/800/450?grayscale'}"
-                alt="${restaurant.name || '-'}">                
+                class="lazyload restaurant-item_header_poster" 
+                data-src="${restaurants.pictureId ? CONFIG.BASE_IMAGE_URL + restaurants.pictureId : 'https://picsum.photos/id/666/800/450?grayscale'}"
+                alt="${restaurants.name || '-'}">                
             </img>
         </picture>       
     </div>
     <div class="restaurant-item_content">
-        <h3 class="restaurant_title"><a href="${`/#/detail/${restaurant.id}`}">${restaurant.name || '-'}</a>
-        <p>${restaurant.city}</p>
+        <h3 class="restaurant__name"><a href="${`/#/detail/${restaurants.id}`}">${restaurants.name || '-'}</a>
+        <p>${restaurants.city}</p>
             <div class="restaurant-item_header_rating">
-                <p>⭐️<span class="restaurant-item_header_rating_score">${restaurant.rating || '-'}</span></p>
+                <p>⭐️<span class="restaurant-item_header_rating_score">${restaurants.rating || '-'}</span></p>
             </div>
         </h3>
-        <p>${restaurant.description || '-'}</p>
-    </div>
-  </div>
-  `;
-
-const createRestaurantItemFavoriteTemplate = (restaurant) => `
-  <div class="restaurant-item">
-    <div class="restaurant-item_header">
-        <picture>
-            <img 
-                class="restaurant-item_header_poster" 
-                src="${restaurant.pictureId ? CONFIG.BASE_IMAGE_URL + restaurant.pictureId : 'https://picsum.photos/id/666/800/450?grayscale'}"
-                alt="${restaurant.name}">
-            </img>    
-        </picture>
-    </div>
-    <div class="restaurant-item_content">
-        <h3>City: ${restaurant.city} </h3>
-        <h3><a href="${`/#/detail/${restaurant.id}`}">${restaurant.name}</a>
-            <div class="restaurant-item_header_rating">
-                <p>⭐️<span class="restaurant-item_header_rating_score">${restaurant.rating}</span></p>
-            </div>
-        </h3>
-        <p>${restaurant.description}</p>
+        <p>${restaurants.description || '-'}</p>
     </div>
   </div>
   `;
@@ -103,7 +80,6 @@ const createUnfavoritedRestaurantButtonTemplate = () => `
 export {
         createRestaurantDetailTemplate,
         createRestaurantItemTemplate,
-        createRestaurantItemFavoriteTemplate,
         createFavoriteRestaurantButtonTemplate,
         createUnfavoritedRestaurantButtonTemplate,
     };

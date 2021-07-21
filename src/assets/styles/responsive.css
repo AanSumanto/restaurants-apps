@@ -18,8 +18,8 @@
         padding: 15px;
     }
 
-    picture img {
-        max-width: 100%;
+    .hero img {
+        width: 100%;
     }
 
     .hero .hero_inner h1 {
@@ -81,7 +81,7 @@
         grid-template-columns: auto 1fr;
     } */
    
-    .restaurant .restaurant_title {
+    .restaurant .restaurant__name {
         grid-column-start: 1;
         grid-column-end: 3;
     }
@@ -136,47 +136,18 @@
     .restaurants {
         grid-template-columns: repeat(4, 1fr);
     }
+
+    .hero img {
+        width: 100%;
+    }
   }
    
 @media screen and (min-width: 1600px) {
     .restaurants {
         grid-template-columns: repeat(5, 1fr);
     }
+
+    .hero img {
+        width: 100%;
+    }
   }
-
-/*Responsive Modal
-
-@keyframes animatezoom {
-    from {
-        transform:scale(0)
-    } 
-    to {
-        transform:scale(1)
-    }
-}            
-@media (max-width:600px) {
-    .modal-content{
-        margin: 0 10px;
-        width: auto!important
-    }
-    .modal{padding-top:30px}
-}
-@media (max-width:768px) {
-    .modal-content {
-        width:500px
-    }
-    .modal {
-        padding-top:50px
-    }
-}
-@media (min-width:993px) {
-    .modal-content {
-        width:900px
-    }
-}
-.clearfix:after {
-    content: "";
-    display: table;
-    clear: both;
-}        
- */
